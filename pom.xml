@@ -7,6 +7,12 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+        <junit.jupiter.version>5.0.3</junit.jupiter.version>
+        <junit.platform.version>1.0.3</junit.platform.version>
+        <hamcrest.version>1.3</hamcrest.version>
+        <junit.platform.surefire>1.0.3</junit.platform.surefire>
+        <maven.surefire.plugin>2.19.1</maven.surefire.plugin>
+        <!--<argLine>-DfailIfNoTests=false</argLine>-->
 	</properties>
 
 	<build>
@@ -21,21 +27,53 @@
 					<source>${java.version}</source>
 				</configuration>
 			</plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.plugin}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-surefire-provider</artifactId>
+                        <version>${junit.platform.surefire}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
 		</plugins>
 	</build>
 
 	<dependencies>
+        <!--Lo mínimo que necesitamos para las pruebas-->
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit.jupiter.version}</version>
 			<scope>test</scope>
 		</dependency>
+
+        <!--Para la bibioteca hamcrest-->
 		<dependency>
 			<groupId>org.hamcrest</groupId>
 			<artifactId>hamcrest-core</artifactId>
-			<version>1.3</version>
-			<scope>test</scope>
+			<version>${hamcrest.version}</version>
+            <scope>test</scope>
 		</dependency>
-	</dependencies>
+
+        <!--Para las pruebas parametrizadas-->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!--Para las suites de pruebas-->
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-runner</artifactId>
+            <version>${junit.platform.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>
