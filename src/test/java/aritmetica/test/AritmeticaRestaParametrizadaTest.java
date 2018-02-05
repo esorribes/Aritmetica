@@ -16,9 +16,9 @@ import java.util.Collection;
 @RunWith(Parameterized.class)
 public class AritmeticaRestaParametrizadaTest {
     private static Aritmetica aritmetica;
-    private float minuendo;
-    private float sustraendo;
-    private float resultado;
+    private double minuendo;
+    private double sustraendo;
+    private double resultado;
 
     public AritmeticaRestaParametrizadaTest(float minuendo, float sustraendo, float resultado) {
         this.minuendo = minuendo;

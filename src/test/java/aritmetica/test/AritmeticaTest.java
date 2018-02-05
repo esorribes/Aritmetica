@@ -28,7 +28,7 @@ public class AritmeticaTest {
 	@Test
 	public void testSuma() {
 		assertThat(aritmetica, notNullValue());
-		assertThat(aritmetica.suma(2, 3), is(5.0f));
+		assertThat(aritmetica.suma(2, 3), is(5.0));
 	}
 
 	@Test
