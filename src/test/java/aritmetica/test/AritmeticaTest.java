@@ -1,18 +1,14 @@
 package aritmetica.test;
 
-import static org.junit.Assert.*;
-import static org.hamcrest.core.Is.*;
-import static org.hamcrest.core.IsNot.*;
-import static org.hamcrest.core.IsNull.*;
-
-import org.hamcrest.core.IsNot;
-import org.junit.After;
+import aritmetica.Aritmetica;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import aritmetica.Aritmetica;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsNull.notNullValue;
+import static org.junit.Assert.assertEquals;
 
 public class AritmeticaTest {
 	private static Aritmetica aritmetica;
@@ -23,6 +19,8 @@ public class AritmeticaTest {
 	}
 	
 	@AfterClass
+
+
 	public static void finish() {
 		aritmetica = null;
 	}

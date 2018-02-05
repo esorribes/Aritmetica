@@ -1,6 +1,6 @@
 package aritmetica.test;
 
-import static org.junit.Assert.*;
+import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.core.Is.*;
 
 import aritmetica.Aritmetica;
