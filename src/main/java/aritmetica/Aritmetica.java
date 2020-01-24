@@ -1,19 +1,19 @@
 package aritmetica;
 
 public class Aritmetica {
-	public double suma(double primerSumando, double segundoSumando) {
+	public float suma(float primerSumando, float segundoSumando) {
 		return primerSumando + segundoSumando;
 	}
 	
-	public double resta(double minuendo, double sustraendo) {
+	public float resta(float minuendo, float sustraendo) {
 		return minuendo - sustraendo;
 	}
 	
-	public double multiplicacion(double primerFactor, double segundoFactor) {
+	public float multiplicacion(float primerFactor, float segundoFactor) {
 		return primerFactor * segundoFactor;
 	}
 	
-	public double division(double dividendo, double divisor) {
+	public float division(float dividendo, float divisor) {
 		return dividendo / divisor;
 	}
 }

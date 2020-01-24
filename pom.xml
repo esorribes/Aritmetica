@@ -7,10 +7,10 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-        <!--<junit.jupiter.version>5.0.2</junit.jupiter.version>-->
-        <!--<junit.platform.version>1.0.2</junit.platform.version>-->
-		<junit.version>4.12</junit.version>
-        <hamcrest.version>1.3</hamcrest.version>
+		<junit.jupiter.version>5.0.2</junit.jupiter.version>
+		<junit.platform.version>1.0.2</junit.platform.version>
+		<maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+		<hamcreast.library>2.1</hamcreast.library>
 	</properties>
 
 	<build>
@@ -48,40 +48,38 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-core</artifactId>
-            <version>${hamcrest.version}</version>
-        </dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-library</artifactId>
+			<version>${hamcreast.library}</version>
+			<scope>test</scope>
+		</dependency>
 
-        <!-- Las siguientes son las dependencias para JUnit 5 -->
-		<!--<dependency>-->
-			<!--<groupId>org.junit.jupiter</groupId>-->
-			<!--<artifactId>junit-jupiter-api</artifactId>-->
-			<!--<version>${junit.jupiter.version}</version>-->
-			<!--<scope>test</scope>-->
-		<!--</dependency>-->
-		<!--<dependency>-->
-			<!--<groupId>org.junit.jupiter</groupId>-->
-			<!--<artifactId>junit-jupiter-engine</artifactId>-->
-			<!--<version>${junit.jupiter.version}</version>-->
-		<!--</dependency>-->
-		<!--Para la anotación @RunWith-->
-		<!--<dependency>-->
-			<!--<groupId>org.junit.platform</groupId>-->
-			<!--<artifactId>junit-platform-runner</artifactId>-->
-			<!--<version>${junit.platform.version}</version>-->
-		<!--</dependency>-->
-        <!--Para la anotación @SelectPackages-->
-        <!--<dependency>-->
-            <!--<groupId>org.junit.platform</groupId>-->
-            <!--<artifactId>junit-platform-suite-api</artifactId>-->
-            <!--<version>${junit.platform.version}</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-    </dependencies>
+		<!--Para las pruebas parametrizadas-->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!--Para la suite de pruebas-->
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-runner</artifactId>
+			<version>${junit.platform.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 </project>
